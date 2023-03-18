@@ -19,12 +19,12 @@
 
             <div class="add-item-form">
                 
-                <input v-on:keyup.enter="items.push({ id:items.length+1, label:newItem })" v-model="newItem" type="text" placeholder="Add an item">
+                <input v-on:keyup.enter="saveItem" v-model="newItem" type="text" placeholder="Add an item">
                 <!-- Checkbox -->
                 <label>
                     <input type="checkbox" v-model="newItemHighPriority"> High Priority
                 </label>
-                <button v-on:click="items.push({ id:items.length+1, label:newItem })" class="btn btn-primary">Save Item</button>
+                <button v-on:click="saveItem" class="btn btn-primary">Save Item</button>
 
             </div>
 
@@ -82,6 +82,13 @@
                         //     'item-2' : { id: 2, label: "2 plastic bags"},
                         //     'item-3' : { id: 3, label: "5 maggies"},
                         // }
+                    }
+                },
+
+                methods: {
+                    saveItem() {
+                        this.items.push({ id:this.items.length+1, label:this.newItem })
+                        this.newItem = ""
                     }
                 },
             })
