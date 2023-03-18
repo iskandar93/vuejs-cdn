@@ -1,4 +1,4 @@
-### Fundamental with Option API
+### Vue JS 3 - Fundamental with Option API
 ### From Console Chrome
 ``` bash
 # Manipulate Data from Chrome Console
@@ -24,4 +24,21 @@
 # v-mode.number // Oppose string version of a number
 ```
 
-# How to use key in v-for can refer from this [link] (https://vueschool.io/articles/vuejs-tutorials/tips-and-gotchas-for-using-key-with-v-for-in-vue-js-3/)
+### Syntax code on v-on directive
+```bash
+# v-on:click // To click and response an action
+# v-on:keyup.enter // To submit input with enter button without click the button
+# v-on also can use @ as @click or @keyup.enter
+```
+
+### Syntax code on v-bind directive
+```bash
+# v-bind:disabled // To disable function input or button
+# v-bind also can use as :disabled
+```
+
+### Computed
+### 1. Encapsulating data transformations and manipulations
+### 2. Synchronizing data based on their references
+
+### How to use key in v-for can refer from this [link] (https://vueschool.io/articles/vuejs-tutorials/tips-and-gotchas-for-using-key-with-v-for-in-vue-js-3/)
