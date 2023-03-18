@@ -17,6 +17,16 @@
             <!-- Using Or Condition -->
             <h1>{{ header || 'Welcome' }}</h1>
 
+            <ul>
+                <li v-for="item in items" :key="item.id">{{ item.label }}</li>
+
+                <!-- With indexing -->
+                <!-- <li v-for="(item, index) in items" :key="item.id">{{index}} {{ item.label }}</li> -->
+
+                <!-- Custom indexing -->
+                <!-- <li v-for="(item, key) in items" :key="item.id">{{key}} {{ item.label }}</li> -->
+            </ul>
+
             <!-- <input v-model="header"> -->
         </div>
         <script src="https://unpkg.com/vue@3"></script>
@@ -25,7 +35,18 @@
             const shoppingList = Vue.createApp({
                 data() {
                     return {
-                        header: 'Shopping List App'
+                        header: 'Shopping List App',
+                        items: [
+                            { id: 1, label: "10 bags"},
+                            { id: 2, label: "2 plastic bags"},
+                            { id: 3, label: "5 maggies"},
+                        ]
+                        // Custom indexing
+                        // items: {
+                        //     'item-1' : { id: 1, label: "10 bags"},
+                        //     'item-2' : { id: 2, label: "2 plastic bags"},
+                        //     'item-3' : { id: 3, label: "5 maggies"},
+                        // }
                     }
                 },
             })
