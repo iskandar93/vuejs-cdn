@@ -17,7 +17,17 @@
             <!-- Using Or Condition -->
             <h1>{{ header || 'Welcome' }}</h1>
 
-            <input v-model.number="newItem" type="text" placeholder="Add an item">
+            <div class="add-item-form">
+                
+                <input v-on:keyup.enter="items.push({ id:items.length+1, label:newItem })" v-model="newItem" type="text" placeholder="Add an item">
+                <!-- Checkbox -->
+                <label>
+                    <input type="checkbox" v-model="newItemHighPriority"> High Priority
+                </label>
+                <button v-on:click="items.push({ id:items.length+1, label:newItem })" class="btn btn-primary">Save Item</button>
+
+            </div>
+
             
             <!-- Radio btn -->
             <!-- <label><input type="radio" v-model="newItemPriority" value="low">Low</label> -->
@@ -32,14 +42,7 @@
                     <option value="high">High</option>
                 </select>
             </label> -->
-
-            <!-- Checkbox -->
-            <label>
-                <input type="checkbox" v-model="newItemHighPriority"> High Priority
-            </label>
-            
-            <br>
-            {{ newItem }} {{ newItemHighPriority }}
+            <!-- {{ newItem }} {{ newItemHighPriority }} -->
 
             <!-- <label><input type="checkbox" v-model="iceCreamFlavours" value="vanilla">Vanilla</label>
             <label><input type="checkbox" v-model="iceCreamFlavours" value="chocolate">Chocolate</label>
