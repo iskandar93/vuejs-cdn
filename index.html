@@ -17,6 +17,35 @@
             <!-- Using Or Condition -->
             <h1>{{ header || 'Welcome' }}</h1>
 
+            <input v-model.number="newItem" type="text" placeholder="Add an item">
+            
+            <!-- Radio btn -->
+            <!-- <label><input type="radio" v-model="newItemPriority" value="low">Low</label> -->
+            <!-- <label><input type="radio" v-model="newItemPriority" value="high">High</label> -->
+
+            <!-- Select -->
+            <!-- <label>
+                Priority
+
+                <select v-model="newItemPriority">
+                    <option value="low">Low</option>
+                    <option value="high">High</option>
+                </select>
+            </label> -->
+
+            <!-- Checkbox -->
+            <label>
+                <input type="checkbox" v-model="newItemHighPriority"> High Priority
+            </label>
+            
+            <br>
+            {{ newItem }} {{ newItemHighPriority }}
+
+            <!-- <label><input type="checkbox" v-model="iceCreamFlavours" value="vanilla">Vanilla</label>
+            <label><input type="checkbox" v-model="iceCreamFlavours" value="chocolate">Chocolate</label>
+            <label><input type="checkbox" v-model="iceCreamFlavours" value="strawberry">Strawberry</label>
+            <label><input type="checkbox" v-model="iceCreamFlavours" value="dark chocolate">Dark Chocolate</label> -->
+
             <ul>
                 <li v-for="item in items" :key="item.id">{{ item.label }}</li>
 
@@ -36,6 +65,9 @@
                 data() {
                     return {
                         header: 'Shopping List App',
+                        newItem: '',
+                        newItemHighPriority: false,
+                        // iceCreamFlavours: [],
                         items: [
                             { id: 1, label: "10 bags"},
                             { id: 2, label: "2 plastic bags"},
