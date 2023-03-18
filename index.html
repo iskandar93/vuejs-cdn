@@ -9,8 +9,15 @@
     <body>
         <!-- Vanilla JavaScript/jQuery -->
         <div id="shopping-list">
-            <h1>{{ header }}</h1>
-            <input v-model="header">
+            <!-- <h1>{{ header; header.toLocaleUpperCase() }}</h1> -->
+
+            <!-- Shorthand if-else statement -->
+            <!-- <h1>{{ header ? header : 'Welcome' }}</h1> -->
+
+            <!-- Using Or Condition -->
+            <h1>{{ header || 'Welcome' }}</h1>
+
+            <!-- <input v-model="header"> -->
         </div>
         <script src="https://unpkg.com/vue@3"></script>
         <script>
@@ -18,7 +25,7 @@
             const shoppingList = Vue.createApp({
                 data() {
                     return {
-                        header: 'Vue is now ready to party!'
+                        header: 'Shopping List App'
                     }
                 },
             })
