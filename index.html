@@ -58,7 +58,7 @@
             <label><input type="checkbox" v-model="iceCreamFlavours" value="dark chocolate">Dark Chocolate</label> -->
 
             <ul>
-                <li v-for="item in items" :key="item.id">{{ item.label }}</li>
+                <li v-for="item in items" @click="togglePurchased(item)" :key="item.id" :class="{strikeout: item.purchased, priority: item.highPriority}" class="static-class">{{ item.label }}</li>
 
                 <!-- With indexing -->
                 <!-- <li v-for="(item, index) in items" :key="item.id">{{index}} {{ item.label }}</li> -->
@@ -81,9 +81,9 @@
                         newItemHighPriority: false,
                         // iceCreamFlavours: [],
                         items: [
-                            // { id: 1, label: "10 bags"},
-                            // { id: 2, label: "2 plastic bags"},
-                            // { id: 3, label: "5 maggies"},
+                            { id: 1, label: "10 bags", purchased: true, highPriority: false},
+                            { id: 2, label: "2 plastic bags", purchased: true, highPriority: false},
+                            { id: 3, label: "5 maggies", purchased: false, highPriority: true},
                         ]
                         // Custom indexing
                         // items: {
@@ -96,12 +96,21 @@
 
                 methods: {
                     saveItem() {
-                        this.items.push({ id:this.items.length+1, label:this.newItem })
-                        this.newItem = ""
+                        this.items.push({ 
+                            id:this.items.length+1, 
+                            label:this.newItem,
+                            highPriority: this.newItemHighPriority
+                        })
+                        this.newItem = "",
+                        this.newItemHighPriority = ""
                     },
                     doEdit(editing) {
                         this.editing = editing
-                        this.newItem = ""
+                        this.newItem = "",
+                        this.newItemHighPriority = ""
+                    },
+                    togglePurchased(item) {
+                        item.purchased = !item.purchased
                     }
                 },
             })
