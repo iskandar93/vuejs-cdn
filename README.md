@@ -17,4 +17,11 @@
 # shoppingList.items.pop()
 ```
 
-### How to use key in v-for can refer from this [link] (https://vueschool.io/articles/vuejs-tutorials/tips-and-gotchas-for-using-key-with-v-for-in-vue-js-3/)
+### Syntax Code on v-model modifier
+```bash
+# v-model.lazy // Data updated after input text is blurred
+# v-model.trim // Any whitespace will be automatically remove
+# v-mode.number // Oppose string version of a number
+```
+
+# How to use key in v-for can refer from this [link] (https://vueschool.io/articles/vuejs-tutorials/tips-and-gotchas-for-using-key-with-v-for-in-vue-js-3/)
